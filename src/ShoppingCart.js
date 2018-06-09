@@ -18,7 +18,7 @@ class ShoppingCart {
   }
   clone() {
     const cloned = new ShoppingCart()
-    cloned.items = [...this.items]
+    cloned.items = [...this.items] //it's a separate copy but i'm still getting test error
     return cloned
   }
 }
