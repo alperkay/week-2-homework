@@ -12,7 +12,7 @@ function addSomePromises(somePromise) {
     } else if (somePromise==="bar") {
       return reject(`${somePromise}${somePromise}${somePromise}`)
     }
-    })
+  })
 }
 
 function promiseToGiveItBackLater(value) {
@@ -23,7 +23,5 @@ function promiseToGiveItBackLater(value) {
     setTimeout(loadComplete,1000)
   })
 }
-
-console.log(addSomePromises('foo'))
 
 module.exports = { giveItBackLater, addSomePromises, promiseToGiveItBackLater }
