@@ -8,24 +8,20 @@ class ShoppingCart {
   }
 
   addItem(itemName,quantity,price) {
-    this.name = itemName
-    this.quantity = quantity
-    this.price = price
-    const newItem = {name: this.name, quantity: this.quantity, pricePerUnit: this.price}
+    const newItem = {name: itemName, quantity: quantity, pricePerUnit: price}
     this.items.push(newItem)
   }
 
   clear() {
     this.items = []
-    return this.items
   }
 
   clone() {
-    const cloned = new ShoppingCart()
-    cloned.items = [...this.items] //it's a separate copy but i'm still getting test error
-    return cloned
+    const cartClone = new ShoppingCart()
+    this.items.map(item => cartClone.addItem(item.name, item.quantity, item.pricePerUnit))
+    return cartClone
   }
 
 }
 
-module.exports.ShoppingCart = ShoppingCart
+module.exports = ShoppingCart
